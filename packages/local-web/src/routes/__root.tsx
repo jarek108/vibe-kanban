@@ -86,7 +86,7 @@ function RootRouteComponent() {
               <UserProvider>
                 <ActionsProvider>
                   <NiceModalProvider>
-                    <Outlet />
+                    <div style={{ position: 'fixed', top: 0, left: 0, zIndex: 9999, background: 'rgba(255,255,255,0.8)', color: 'black', padding: '2px 5px', fontSize: '12px', fontWeight: 'bold' }}>Jarek (R) was here</div><Outlet />
                   </NiceModalProvider>
                 </ActionsProvider>
               </UserProvider>
