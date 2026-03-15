@@ -36,7 +36,7 @@ const loadMobileFontScale = (): MobileFontScale => {
   return 'default';
 };
 
-export type KanbanViewMode = 'kanban' | 'list';
+export type KanbanViewMode = 'kanban' | 'list' | 'graph';
 
 export type ContextBarPosition =
   | 'top-left'

@@ -51,6 +51,7 @@ import {
 } from '@vibe/ui/components/IssueWorkspaceCard';
 import { resolveRelationshipsForIssue } from '@/shared/lib/resolveRelationships';
 import { KanbanFilterBar } from '@vibe/ui/components/KanbanFilterBar';
+import { GraphView } from './GraphView';
 import { ViewNavTabs } from '@vibe/ui/components/ViewNavTabs';
 import { IssueListView } from '@vibe/ui/components/IssueListView';
 import { CommandBarDialog } from '@/shared/dialogs/command-bar/CommandBarDialog';
@@ -1017,6 +1018,10 @@ export function KanbanContainer() {
             </KanbanProvider>
           </div>
         )
+      ) : kanbanViewMode === 'graph' ? (
+        <div className="flex-1 overflow-hidden px-double pb-double">
+          <GraphView selectedKanbanIssueId={selectedKanbanIssueId} />
+        </div>
       ) : (
         <div className="flex-1 overflow-y-auto px-double">
           <KanbanProvider onDragEnd={handleDragEnd} className="!block !w-full">

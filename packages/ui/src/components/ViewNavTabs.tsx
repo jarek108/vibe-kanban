@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { cn } from '../lib/cn';
 import { ButtonGroup, ButtonGroupItem } from './IconButtonGroup';
 
-export type ViewNavMode = 'kanban' | 'list';
+export type ViewNavMode = 'kanban' | 'list' | 'graph';
 
 export type ViewNavStatus = {
   id: string;
@@ -55,6 +55,18 @@ export function ViewNavTabs({
           }}
         >
           {t('kanban.viewTabs.all')}
+        </ButtonGroupItem>
+
+        
+        {/* Graph tab */}
+        <ButtonGroupItem
+          active={activeView === 'graph'}
+          onClick={() => {
+            onViewChange('graph');
+            onStatusSelect(null);
+          }}
+        >
+          {t('kanban.viewTabs.graph', 'Graph')}
         </ButtonGroupItem>
 
         {/* Hidden status tabs */}
